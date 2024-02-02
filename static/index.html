@@ -19,7 +19,7 @@
 				return ret;
 			}
 			function makeIt(){
-				document.getElementById("results").value=`[htṭps://www.youtube.com/watch?v=${genId()}](${window.top.location}/embed?a=${encodeURIComponent(document.getElementById("author").value)}&t=${encodeURIComponent(document.getElementById("title").value)}&u=${encodeURIComponent(document.getElementById("image").value)})`;
+				document.getElementById("results").value=`[htṭps://www.youtube.com/watch?v=${genId()}](https://roll.kestron.software/embed?a=${encodeURIComponent(document.getElementById("author").value)}&t=${encodeURIComponent(document.getElementById("title").value)}&u=${encodeURIComponent(document.getElementById("image").value)})`;
 			}
 			function copyIt(){
 				navigator.clipboard.writeText(document.getElementById("results").value);
