@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rollmaker</title>
+  </head>
+  <body>
+    <input placeholder="Channel name..." id="author"><br>
+		<input placeholder="Video title..." id="title"><br>
+		<input placeholder="Image URL" id="image"><br>
+		<input type="button" value="Create" onclick="makeIt()"><br><br>
+		<input placeholder="Results will show here..." id="results"><input type="button" value="Copy" onclick="copyIt()">
+		<script>
+			var ytChars="qwertyuiopasdfghjklzcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890-_";
+			function genId(){
+				var ret="";
+				for(var i=0;i<11;i++){
+					ret+=ytChars[Math.floor(Math.random()*ytChars.length)];
+				}
+				return ret;
+			}
+			function makeIt(){
+				document.getElementById("results").value=`[htṭps://www.youtube.com/watch?v=${genId()}](${window.top.location}/embed?a=${encodeURIComponent(document.getElementById("author").value)}&t=${encodeURIComponent(document.getElementById("title").value)}&u=${encodeURIComponent(document.getElementById("image").value)})`;
+			}
+			function copyIt(){
+				navigator.clipboard.writeText(document.getElementById("results").value);
+			}
+		</script>
+  </body>
+</html>
